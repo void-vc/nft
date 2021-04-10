@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <xs:element name="nft">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="private">
+                </xs:element>
+                <xs:element name="public">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:group ref="article" />
+                            <xs:group ref="author" />
+                            <xs:group ref="agent" />
+                            <xs:group ref="provider" />
+                            <xs:group ref="owner" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Containers -->
+    
+    <xs:group name="article">
+        <xs:sequence>
+            <xs:element name="article">
+                <xs:complexType>
+                    <xs:group ref="article-item" />
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:group name="author">
+        <xs:sequence>
+            <xs:element name="author">
+                <!--xs:complexType>
+                    <xs:group ref="" />
+                </xs:complexType-->
+            </xs:element>
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:group name="agent">
+        <xs:sequence>
+            <xs:element name="agent">
+                <!--xs:complexType>
+                    <xs:group ref="" />
+                </xs:complexType-->
+            </xs:element>
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:group name="provider">
+        <xs:sequence>
+            <xs:element name="provider">
+                <!--xs:complexType>
+                    <xs:group ref="" />
+                </xs:complexType-->
+            </xs:element>
+        </xs:sequence>
+    </xs:group>
+    
+    <xs:group name="owner">
+        <xs:sequence>
+            <xs:element name="owner">
+                <!--xs:complexType>
+                    <xs:group ref="" />
+                </xs:complexType-->
+            </xs:element>
+        </xs:sequence>
+    </xs:group>
+    
+    
+    <!-- Items -->
+    
+    <xs:group name="article-item">
+        <xs:sequence>
+            <xs:element name="item">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="title" type="xs:string" />
+                        <xs:element name="description" type="xs:string" />
+                        <xs:element name="filedata">
+                            <xs:complexType>
+                                <xs:attribute name="mime" type="xs:string" use="required">
+                                    <xs:simpleType>
+                                        <xs:restriction>
+                                            <xs:enumeration value="image/gif" />
+                                            <xs:enumeration value="image/jpeg" />
+                                            <xs:enumeration value="image/png" />
+                                            <xs:enumeration value="text/plain" />
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                                <xs:attribute name="enctype" type="xs:string" use="required">
+                                    <xs:simpleType>
+                                        <xs:restriction>
+                                            <xs:enumeration value="base64" />
+                                            <xs:enumeration value="hex" />
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                                <xs:attribute name="display" type="xs:string" use="required">
+                                    <xs:simpleType>
+                                        <xs:restriction>
+                                            <xs:enumeration value="image" />
+                                            <xs:enumeration value="text" />
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:group>
+
+</xs:schema>
