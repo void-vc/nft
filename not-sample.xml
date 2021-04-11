@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nft xsi:noNamespaceSchemaLocation="schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <private />
+  <public>
+    <env>
+      <transaction>
+        <item>
+          <title>string</title>
+          <description>string</description>
+          <filedata type="payment" mime="image/gif" enctype="base64" display="image">string</filedata>
+        </item>
+        <origin />
+        <provider />
+        <datahash hash="string" algorithm="GOST34112012.512">
+          <concat>string</concat>
+        </datahash>
+        <id>string</id>
+        <signature>string</signature>
+      </transaction>
+    </env>
+    <agent />
+    <owner />
+  </public>
+</nft>
